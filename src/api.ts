@@ -43,3 +43,10 @@ export function register(email: string, password: string, name?: string) {
     body: JSON.stringify({ email, password, name }),
   });
 }
+
+export function loginWithGoogle(credential: string) {
+  return request<AuthResponse>('/api/auth/google', {
+    method: 'POST',
+    body: JSON.stringify({ credential }),
+  });
+}

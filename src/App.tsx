@@ -29,10 +29,18 @@ function ProtectedRoute({ children }: { children: JSX.Element }) {
 }
 
 function App() {
+  const { token } = useAuth();
+
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
+      <Route
+        path="/"
+        element={token ? <Navigate to="/dashboard" replace /> : <LoginPage />}
+      />
+      <Route
+        path="/register"
+        element={token ? <Navigate to="/dashboard" replace /> : <RegisterPage />}
+      />
       <Route
         path="/dashboard"
         element={

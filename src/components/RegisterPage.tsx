@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import { register } from '../api';
 import { useAuth } from '../AuthContext';
+import GoogleSignInButton from './GoogleSignInButton';
 
 export default function RegisterPage() {
   const navigate = useNavigate();
@@ -98,6 +99,14 @@ export default function RegisterPage() {
               <span>Register</span>
             </button>
           </form>
+
+          <div className="mt-4 flex items-center justify-center">
+            <span className="h-px w-16 bg-gray-200" />
+            <span className="mx-3 text-xs uppercase text-gray-400">or</span>
+            <span className="h-px w-16 bg-gray-200" />
+          </div>
+
+          <GoogleSignInButton />
 
           <p className="mt-6 text-sm text-gray-600 text-center">
             Already have an account?{' '}
