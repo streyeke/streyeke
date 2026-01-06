@@ -16,6 +16,8 @@ app.use(express.json());
 const allowedOrigins = [
   'http://localhost:5173',
   'https://streyeke.cloud',
+  'https://www.streyeke.cloud', // Add this
+  'http://streyeke.cloud',      // Add this as a backup until HTTPS is on
 ];
 
 app.use(
